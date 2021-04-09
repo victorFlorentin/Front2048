@@ -6,7 +6,6 @@ import javax.swing.JFrame;
 import java.awt.Dimension;
 import java.awt.Rectangle;
 import java.awt.ComponentOrientation;
-import javax.swing.JPanel;
 
 public class MainView {
 
@@ -33,6 +32,7 @@ public class MainView {
 	 */
 	public MainView() {
 		initialize();
+		
 	}
 
 	/**
@@ -45,12 +45,10 @@ public class MainView {
 		frame.getContentPane().setBounds(new Rectangle(0, 0, 800, 600));
 		frame.getContentPane().setPreferredSize(new Dimension(800, 600));
 		frame.getContentPane().setLayout(null);
-		
-		JPanel panel = new JPanel();
-		panel.setBounds(43, 25, 512, 512);
-		//panel.setBounds(300, 161, 308, 368);
-		frame.getContentPane().add(panel);
 		frame.setBounds(100, 100, 800, 600);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		MainViewPanel mvp = new MainViewPanel();
+		frame.add(mvp.getPanel());
+		mvp.AddListener();
 	}
 }
