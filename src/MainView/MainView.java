@@ -22,7 +22,6 @@ import javax.swing.JLabel;
 import javax.swing.ImageIcon;
 
 public class MainView {
-	private Font customFont;
 	private JFrame frame;
 
 	/**
@@ -52,17 +51,7 @@ public class MainView {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		try {
-		    //create the font to use. Specify the size!
-		      customFont = Font.createFont(Font.TRUETYPE_FONT, new File("CATFranken-Deutsch.ttf")).deriveFont(12f);
-		    GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-		    //register the font
-		    ge.registerFont(customFont);
-		} catch (IOException e) {
-		    e.printStackTrace();
-		} catch(FontFormatException e) {
-		    e.printStackTrace();
-		}
+		
 		frame = new JFrame();
 		frame.setTitle("2048");
 		frame.getContentPane().setSize(new Dimension(800, 600));
@@ -78,7 +67,8 @@ public class MainView {
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
 		
-		JButton btnNewButton = new JButton("Juego Nuevo");
+		JButton btnNewButton = new JButton("");
+		btnNewButton.setIcon(new ImageIcon("C:\\Users\\marti\\OneDrive\\Escritorio\\proyecto 2048\\Front2048\\res\\juego nuevo.png"));
 		btnNewButton.setForeground(Color.BLACK);
 		btnNewButton.addMouseListener(new MouseAdapter() {
 			@Override
@@ -90,11 +80,12 @@ public class MainView {
 		btnNewButton.setBounds(332, 279, 163, 70);
 		panel.add(btnNewButton);
 		
-		JLabel lblNewLabel = new JLabel("bienvenido a 2048");
+		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setBackground(Color.GRAY);
 		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\marti\\OneDrive\\Escritorio\\proyecto 2048\\Front2048\\res\\bienvenido.png"));
 		lblNewLabel.setForeground(Color.BLACK);
 		lblNewLabel.setFont(new Font("customFont", Font.BOLD | Font.ITALIC, 24));
-		lblNewLabel.setBounds(300, 94, 255, 88);
+		lblNewLabel.setBounds(207, 94, 418, 88);
 		panel.add(lblNewLabel);
 		frame.setBounds(100, 100, 818, 641);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
