@@ -20,6 +20,7 @@ import java.io.IOException;
 
 import javax.swing.JLabel;
 import javax.swing.ImageIcon;
+import java.awt.Toolkit;
 
 public class MainView {
 	private JFrame frame;
@@ -67,26 +68,36 @@ public class MainView {
 		frame.getContentPane().add(panel);
 		panel.setLayout(null);
 		
-		JButton btnNewButton = new JButton("");
-		btnNewButton.setIcon(new ImageIcon("C:\\Users\\marti\\OneDrive\\Escritorio\\proyecto 2048\\Front2048\\res\\juego nuevo.png"));
-		btnNewButton.setForeground(Color.BLACK);
-		btnNewButton.addMouseListener(new MouseAdapter() {
+		JButton BotonJuegoNuevo = new JButton("");
+		BotonJuegoNuevo.setIcon(new ImageIcon("C:\\Users\\marti\\OneDrive\\Escritorio\\proyecto 2048\\Front2048\\res\\juego nuevo.png"));
+		BotonJuegoNuevo.setForeground(Color.BLACK);
+		BotonJuegoNuevo.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 			}
 		});
-		btnNewButton.setFont(new Font("customFont", Font.BOLD | Font.ITALIC, 15));
-		btnNewButton.setBackground(Color.GRAY);
-		btnNewButton.setBounds(332, 279, 163, 70);
-		panel.add(btnNewButton);
+		BotonJuegoNuevo.setFont(new Font("customFont", Font.BOLD | Font.ITALIC, 15));
+		BotonJuegoNuevo.setBackground(Color.LIGHT_GRAY);
+		BotonJuegoNuevo.setBounds(332, 279, 163, 70);
+		panel.add(BotonJuegoNuevo);
 		
-		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setBackground(Color.GRAY);
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\marti\\OneDrive\\Escritorio\\proyecto 2048\\Front2048\\res\\bienvenido.png"));
-		lblNewLabel.setForeground(Color.BLACK);
-		lblNewLabel.setFont(new Font("customFont", Font.BOLD | Font.ITALIC, 24));
-		lblNewLabel.setBounds(207, 94, 418, 88);
-		panel.add(lblNewLabel);
+		JLabel CartelBienvenida = new JLabel("");
+		CartelBienvenida.setBackground(Color.GRAY);
+		CartelBienvenida.setIcon(new ImageIcon("C:\\Users\\marti\\OneDrive\\Escritorio\\proyecto 2048\\Front2048\\res\\bienvenido.png"));
+		CartelBienvenida.setForeground(Color.BLACK);
+		CartelBienvenida.setFont(new Font("customFont", Font.BOLD | Font.ITALIC, 24));
+		CartelBienvenida.setBounds(207, 34, 418, 173);
+		panel.add(CartelBienvenida);
+		
+		JLabel ImagenCadenaSuperior = new JLabel("New label");
+		ImagenCadenaSuperior.setIcon(new ImageIcon("C:\\Users\\marti\\OneDrive\\Escritorio\\proyecto 2048\\Front2048\\res\\parte superior.png"));
+		ImagenCadenaSuperior.setBounds(0, 0, 172, 132);
+		panel.add(ImagenCadenaSuperior);
+		
+		JLabel ImagenCadenaInferior = new JLabel("New label");
+		ImagenCadenaInferior.setIcon(new ImageIcon("C:\\Users\\marti\\OneDrive\\Escritorio\\proyecto 2048\\Front2048\\res\\parte inferior.png"));
+		ImagenCadenaInferior.setBounds(639, 473, 161, 127);
+		panel.add(ImagenCadenaInferior);
 		frame.setBounds(100, 100, 818, 641);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
